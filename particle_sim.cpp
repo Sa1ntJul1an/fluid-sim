@@ -64,6 +64,8 @@ void ParticleSim::updateParticles(float current_time) {
         float a_x = (Fx_total - friction_force_x) / particle1->getMass();
         float a_y = (Fy_total - friction_force_y) / particle1->getMass();
 
+        a_y -= _gravity;
+
         std::vector<float> acceleration = {a_x, a_y};
 
         particle1->setAcceleration(acceleration);
